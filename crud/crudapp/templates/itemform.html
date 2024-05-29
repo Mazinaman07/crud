@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: beige;
+
+        }
+        .additem {
+            background-color: bisque;
+            text-align: center;
+            margin-top: 200px;
+            /* flex: 200px; */
+        }
+    </style>
+</head>
+<body>
+    
+    <form method="post" action="/additem/" enctype="multipart/form-data">
+        {% csrf_token %}
+
+<div class="additem">
+
+        <h1>ADD ITEM</h1>
+
+        <!-- <label for ="">ID:</label>
+        <div>{{data.item_id}}</div> -->
+
+        <div><label for="" style="margin-left: 100px;">IMAGE:</label>
+        {{data.img}}<br></div><br>
+
+        <div><label for="">NAME:</label>
+        {{data.name}}</div><br>
+
+        <div><label for="" style="margin-left: 60px;">DESCRIPTION:</label>
+        {{data.description}}</div><br>
+
+        <div><label for="">PRICE:</label>
+        {{data.price}}</div><br>
+
+        <button type="submit">ADD</button>
+    </div>
+    </form>
+
+</body>
+</html>

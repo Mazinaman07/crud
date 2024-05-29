@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        body {
+            background-color: bisque;
+        }
+
+        .kn {
+            text-align: center;
+            margin-top: 200px;
+            background-color: brown;
+            width: 300px;
+            height: 230px;
+            margin-left: 230px;
+
+        }
+    </style>
+
+
+</head>
+<body>
+    
+    <form method="post" action="/adduser/" enctype="multipart/form-data">
+        {% csrf_token %}
+
+    <div class="kn">
+
+        <h1>ADD USER</h1> 
+
+         <!-- <label for="">ID:</label>
+        <div>{{data.id}}</div>  -->
+
+        <div><label for="">NAME :</label>
+        {{data.name}}</div><br>
+
+        <div><label for="">E-MAIL :</label>
+        {{data.email}}</div><br>
+
+        <div><label for="">CONTACT :</label>
+        {{data.contact}}</div><br>
+
+        <button type="submit">ADD USER</button>
+
+    </div>
+
+    </form>
+
+</body>
+</html>
+
+

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    {% load static %}
+<body>
+    
+    <form method="post" action="/updateitem/{{itm.id}}" enctype="multipart/form-data">
+
+        {% csrf_token %}
+
+        <table>
+
+            <tr><td>               
+                NAME
+                <br><input name="name" value="{{itm.name}}" type="text">
+            </td></tr>
+            <br><br>
+
+
+            <tr><td>
+                IMAGE
+                <br><input name="img" value="{% static itm.img %}" type="file">
+            </td></tr>           
+            <br><br>
+
+
+            <tr><td>
+                DESCRIPTION
+                <br><input name="description" value="{{itm.description}}" type="text">
+            </td></tr> 
+            <br><br>
+
+
+            <tr><td>
+                PRICE
+                <br><input name="price" value="{{itm.price}}" type="text">
+            </td></tr>
+            <br><br>
+
+
+            <button type="submit">UPDATE ITEM</button> <br><br>
+
+
+        </table>
+    </form>
+
+</body>
+</html>
+
+
+

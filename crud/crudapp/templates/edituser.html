@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: beige;
+            text-align: center;
+        }
+        .update {
+            background-color: bisque;
+            text-align: center;
+            margin-top: 150px;
+        }
+    </style>
+</head>
+    {% load static %}
+<body>
+    
+    <form method="post" action="/updateuser/{{user.id}}" enctype="multipart/form-data">
+
+        {% csrf_token %}
+<div class="update">
+        <table>
+
+            <tr><td>               
+                NAME
+                <br><input name="name" value="{{user.name}}" type="text">
+            </td></tr>
+            <br><br>
+
+
+            <tr><td>
+                E-MAIL
+                <br><input name="email" value="{{user.email}}" type="email">
+            </td></tr> 
+            <br><br>
+
+
+            <tr><td>
+                CONTACT
+                <br><input name="contact" value="{{user.contact}}" type="text">
+            </td></tr>
+            <br><br>
+
+
+            <button type="submit">UPDATE</button> <br><br>
+
+
+        </table>
+    </div>
+    </form>
+
+</body>
+</html>
